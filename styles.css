@@ -12903,23 +12903,152 @@ h1, h2, h3, .font-serif, .italic-serif {
     }
 }
 
-/* Old Rectory guest guide — only the new link in the introduction. */
-.luxury-retreat-page.rectory-reference-theme .oldrectory-guest-guide {
+/* ============================================================================
+   THE OLD RECTORY — GUEST EXPERIENCES (FIXED COLLAPSED CARDS + CAROUSEL)
+   Scoped solely to this section. All original page styles and brand colours stay.
+   Duplicated inline in luxury-retreat.html as protection against stale styles.css
+   files on CDNs / GitHub Pages.
+   ============================================================================ */
+.luxury-retreat-page .oldrectory-reviews-carousel {
+    position: relative;
+    width: 100%;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-reviews-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: auto;
+    scrollbar-width: none;
+}
+.luxury-retreat-page .oldrectory-reviews-viewport:focus-visible {
+    outline: 2px solid var(--rectory-sage, #5c6d51);
+    outline-offset: 5px;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-reviews-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: none;
+    transform: translate3d(0,0,0);
+    transition: transform 570ms cubic-bezier(.22, 1, .36, 1);
+    will-change: transform;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+    height: 354px;
+    min-height: 354px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: height 600ms cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease;
+}
+.luxury-retreat-page .oldrectory-review-main { min-width: 0; }
+.luxury-retreat-page .oldrectory-review-excerpt {
+    margin-top: 16px;
+    position: relative;
+    min-width: 0;
+}
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-text {
     margin: 0;
-    max-width: 540px;
-    font-family: var(--font-sans);
-    font-size: 16px;
+    max-height: 6.8em;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    transition: max-height 600ms cubic-bezier(.22, 1, .36, 1);
+}
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-text p {
+    margin: 0;
     line-height: 1.7;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
 }
-
-.luxury-retreat-page.rectory-reference-theme .oldrectory-guest-guide-link {
-    color: var(--rectory-deep);
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
+/* The control is within the fading text, never a detached button below it. */
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: -2px;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 4px 0 4px 25px;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(to right, rgba(251,250,247,0), rgba(251,250,247,.96) 28%, #fbfaf7 72%);
+    color: var(--rectory-sage, #5c6d51);
+    font: 700 11px/1.5 var(--font-sans, Montserrat, sans-serif);
+    letter-spacing: .55px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity .2s ease;
 }
-
-.luxury-retreat-page.rectory-reference-theme .oldrectory-guest-guide-link:hover {
-    color: var(--rectory-sage);
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more:hover { opacity: .7; }
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+.luxury-retreat-page .oldrectory-review-excerpt.is-expanded .oldrectory-review-text {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+.luxury-retreat-page .oldrectory-review-excerpt.is-expanded .oldrectory-review-more {
+    position: relative;
+    display: inline-flex;
+    right: auto;
+    bottom: auto;
+    background: transparent;
+    padding: 0 0 3px;
+    margin: 14px 0 0;
+    border-bottom: 1px solid currentColor;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-author {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+.luxury-retreat-page .oldrectory-review-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(59,70,53,.28);
+    border-radius: 50%;
+    background: #fbfaf7;
+    color: var(--rectory-sage, #5c6d51);
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(43,52,39,.08);
+    transition: opacity .2s ease, transform .2s ease;
+}
+.luxury-retreat-page .oldrectory-review-arrow svg {display:block; width:20px; height:20px;}
+.luxury-retreat-page .oldrectory-review-prev {left: -49px;}
+.luxury-retreat-page .oldrectory-review-next {right: -49px;}
+.luxury-retreat-page .oldrectory-review-arrow:disabled { opacity: .3; cursor: not-allowed; }
+.luxury-retreat-page .oldrectory-review-arrow:not(:disabled):hover {transform: translateY(-50%) scale(1.06);}
+.luxury-retreat-page .oldrectory-review-arrow:focus-visible {outline: 2px solid currentColor; outline-offset: 3px;}
+@media (min-width: 901px) and (max-width: 1290px) {
+    .luxury-retreat-page .oldrectory-review-prev {left: -18px;}
+    .luxury-retreat-page .oldrectory-review-next {right: -18px;}
+}
+@media (max-width: 900px) {
+    .luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-card {flex-basis: 100%;}
+    .luxury-retreat-page .oldrectory-reviews-carousel {padding-bottom: 53px;}
+    .luxury-retreat-page .oldrectory-review-arrow {top: auto; bottom: 0; transform:none;}
+    .luxury-retreat-page .oldrectory-review-prev {left: calc(50% - 49px);}
+    .luxury-retreat-page .oldrectory-review-next {right: calc(50% - 49px);}
+    .luxury-retreat-page .oldrectory-review-arrow:not(:disabled):hover {transform:scale(1.06);}
+}
+@media (prefers-reduced-motion: reduce) {
+    .luxury-retreat-page .oldrectory-reviews-grid,
+    .luxury-retreat-page .oldrectory-review-card,
+    .luxury-retreat-page .oldrectory-review-text,
+    .luxury-retreat-page .oldrectory-review-arrow { transition: none !important; }
 }
