@@ -13052,3 +13052,12 @@ h1, h2, h3, .font-serif, .italic-serif {
     .luxury-retreat-page .oldrectory-review-text,
     .luxury-retreat-page .oldrectory-review-arrow { transition: none !important; }
 }
+
+
+/* Centre Guest Experiences description */
+.luxury-retreat-page .oldrectory-reviews-header .oldrectory-paragraph {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
