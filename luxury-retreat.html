@@ -9,7 +9,159 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="assets/images/End%20Image%20V1.webp" type="image/webp" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=rectory-reviews-2">
+<style id="oldrectory-review-styles">
+/* ============================================================================
+   THE OLD RECTORY — GUEST EXPERIENCES (FIXED COLLAPSED CARDS + CAROUSEL)
+   Scoped solely to this section. All original page styles and brand colours stay.
+   Duplicated inline in luxury-retreat.html as protection against stale styles.css
+   files on CDNs / GitHub Pages.
+   ============================================================================ */
+.luxury-retreat-page .oldrectory-reviews-carousel {
+    position: relative;
+    width: 100%;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-reviews-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: auto;
+    scrollbar-width: none;
+}
+.luxury-retreat-page .oldrectory-reviews-viewport:focus-visible {
+    outline: 2px solid var(--rectory-sage, #5c6d51);
+    outline-offset: 5px;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-reviews-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: none;
+    transform: translate3d(0,0,0);
+    transition: transform 570ms cubic-bezier(.22, 1, .36, 1);
+    will-change: transform;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+    height: 354px;
+    min-height: 354px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: height 600ms cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease;
+}
+.luxury-retreat-page .oldrectory-review-main { min-width: 0; }
+.luxury-retreat-page .oldrectory-review-excerpt {
+    margin-top: 16px;
+    position: relative;
+    min-width: 0;
+}
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-text {
+    margin: 0;
+    max-height: 6.8em;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    transition: max-height 600ms cubic-bezier(.22, 1, .36, 1);
+}
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-text p {
+    margin: 0;
+    line-height: 1.7;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+/* The control is within the fading text, never a detached button below it. */
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: -2px;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 4px 0 4px 25px;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(to right, rgba(251,250,247,0), rgba(251,250,247,.96) 28%, #fbfaf7 72%);
+    color: var(--rectory-sage, #5c6d51);
+    font: 700 11px/1.5 var(--font-sans, Montserrat, sans-serif);
+    letter-spacing: .55px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more:hover { opacity: .7; }
+.luxury-retreat-page .oldrectory-review-excerpt .oldrectory-review-more:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+.luxury-retreat-page .oldrectory-review-excerpt.is-expanded .oldrectory-review-text {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+.luxury-retreat-page .oldrectory-review-excerpt.is-expanded .oldrectory-review-more {
+    position: relative;
+    display: inline-flex;
+    right: auto;
+    bottom: auto;
+    background: transparent;
+    padding: 0 0 3px;
+    margin: 14px 0 0;
+    border-bottom: 1px solid currentColor;
+}
+.luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-author {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+.luxury-retreat-page .oldrectory-review-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(59,70,53,.28);
+    border-radius: 50%;
+    background: #fbfaf7;
+    color: var(--rectory-sage, #5c6d51);
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(43,52,39,.08);
+    transition: opacity .2s ease, transform .2s ease;
+}
+.luxury-retreat-page .oldrectory-review-arrow svg {display:block; width:20px; height:20px;}
+.luxury-retreat-page .oldrectory-review-prev {left: -49px;}
+.luxury-retreat-page .oldrectory-review-next {right: -49px;}
+.luxury-retreat-page .oldrectory-review-arrow:disabled { opacity: .3; cursor: not-allowed; }
+.luxury-retreat-page .oldrectory-review-arrow:not(:disabled):hover {transform: translateY(-50%) scale(1.06);}
+.luxury-retreat-page .oldrectory-review-arrow:focus-visible {outline: 2px solid currentColor; outline-offset: 3px;}
+@media (min-width: 901px) and (max-width: 1290px) {
+    .luxury-retreat-page .oldrectory-review-prev {left: -18px;}
+    .luxury-retreat-page .oldrectory-review-next {right: -18px;}
+}
+@media (max-width: 900px) {
+    .luxury-retreat-page .oldrectory-reviews-carousel .oldrectory-review-card {flex-basis: 100%;}
+    .luxury-retreat-page .oldrectory-reviews-carousel {padding-bottom: 53px;}
+    .luxury-retreat-page .oldrectory-review-arrow {top: auto; bottom: 0; transform:none;}
+    .luxury-retreat-page .oldrectory-review-prev {left: calc(50% - 49px);}
+    .luxury-retreat-page .oldrectory-review-next {right: calc(50% - 49px);}
+    .luxury-retreat-page .oldrectory-review-arrow:not(:disabled):hover {transform:scale(1.06);}
+}
+@media (prefers-reduced-motion: reduce) {
+    .luxury-retreat-page .oldrectory-reviews-grid,
+    .luxury-retreat-page .oldrectory-review-card,
+    .luxury-retreat-page .oldrectory-review-text,
+    .luxury-retreat-page .oldrectory-review-arrow { transition: none !important; }
+}
+
+</style>
 </head>
 <body class="luxury-retreat-page rectory-reference-theme">
 
@@ -421,25 +573,27 @@
                     <h2 id="oldrectory-reviews-title" class="oldrectory-heading">Guest Experiences</h2>
                     <p class="oldrectory-paragraph">A few words from guests who have gathered, celebrated and relaxed at The Old Rectory.</p>
                 </div>
-                <div class="oldrectory-reviews-carousel" aria-label="Guest reviews carousel">
+                <div class="oldrectory-reviews-carousel" role="region" aria-roledescription="carousel" aria-label="Guest reviews carousel">
                     <button class="oldrectory-review-arrow oldrectory-review-prev" type="button" aria-label="Previous review" aria-controls="oldrectory-reviews-viewport" disabled>
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
                     </button>
-                    <div class="oldrectory-reviews-viewport" id="oldrectory-reviews-viewport" tabindex="0" aria-label="Browse guest reviews with the arrow keys">
+                    <div class="oldrectory-reviews-viewport" id="oldrectory-reviews-viewport" tabindex="0" aria-label="Browse guest reviews using the arrows or swipe">
                         <div class="oldrectory-reviews-grid">
                         <article class="oldrectory-review-card" aria-label="Review by David">
                             <div class="oldrectory-review-main">
                                 <div class="oldrectory-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                                <div class="oldrectory-review-text" id="oldrectory-review-text-david">
+                                <div class="oldrectory-review-excerpt">
+<div class="oldrectory-review-text" id="oldrectory-review-text-david">
                                     <p>I wanted to celebrate my 70th birthday by gathering the whole family together for a short break; finding something large enough in a suitable location, with a good range of facilities, and at half term, was going to be a challenge.  But boy, did we hit the jackpot with The Old Rectory.
 From our initial contact and throughout the arrangements our hosts, Louise and Nicole, were perfect – instantly responsive, amazingly helpful and always available (but unobtrusive) throughout our stay.
 For a large family spanning three generations the whole experience was perfect.  From the spacious luxury of the main house to the quiet of the shepherd huts, from the garden house with table tennis and Nerf guns to the croquet lawn, from the enormous trampoline to the badminton net, from the amazing heated pool (“It’s got a diving board!”) to the hot tub (“We can watch the kids from here....”) everything was ideal.
 There were tears when it came time to leave; we would all be delighted to return.</p>
                                 </div>
-                                <button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-david">Read More</button>
+<button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-david">Read More</button>
+</div>
                             </div>
                             <div class="oldrectory-review-author">
-                                <img src="assets/images/reviews/David.webp" alt="Airbnb profile picture of David" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
+                                <img src="data:image/webp;base64,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" alt="Airbnb profile picture of David" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
                                 <div class="oldrectory-review-author-copy">
                                     <strong>David</strong>
                                     <span>November 2026</span>
@@ -449,13 +603,15 @@ There were tears when it came time to leave; we would all be delighted to return
                         <article class="oldrectory-review-card" aria-label="Review by Jenny">
                             <div class="oldrectory-review-main">
                                 <div class="oldrectory-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                                <div class="oldrectory-review-text" id="oldrectory-review-text-jenny">
+                                <div class="oldrectory-review-excerpt">
+<div class="oldrectory-review-text" id="oldrectory-review-text-jenny">
                                     <p>We had an amazing stay. Beautiful house and great hosts. Thank you. We had a wonderful stay, it really worked for us as a multi generational family stay but would equally would be perfect for a group of friends. Great communication and support from first booking to checking out. Great recommendations for local chef too! Perfect</p>
                                 </div>
-                                <button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-jenny">Read More</button>
+<button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-jenny">Read More</button>
+</div>
                             </div>
                             <div class="oldrectory-review-author">
-                                <img src="assets/images/reviews/Jenny.webp" alt="Airbnb profile picture of Jenny" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
+                                <img src="data:image/webp;base64,UklGRnYWAABXRUJQVlA4IGoWAADwVQCdASqQAJAAPhUIg0EhBzcTnwQAUSygGU33wnSSfyL2bfG8ofWZ2f5cHSfPg3ETM+eHX33wH/G/mP71/av2n/u/tif3nfM6R/6foF/Hftz+e/t3+M/5/rn/zP7941/HP/A9Qj8c/mn+b/rf7jf3v92vqd+t/3fdm7B/uvQL91Pun/J/yHkAazfhb0jf2b/t8pfQJ/0Polf4H/s/2H5dfD389/0H/h/zvue/23/d/cav9iMq3p1CM0vOrg+vBX/mVfzuW83wIhc6B6dKRPQSa2x/RvfZ5XykNNSdUToq+2qXI+ebM28eIbxERsFaz7KVOpObrBW50y31qof4G3ubegPRdekWZZKjVW8sSuaQrtdnnidUXmZpi+44OojGjKjxmcv7GhRBsrK1AMXz8TPR5DqGOiBBjcdKw7MLF60BF6C7qFDSvHCMl9SZIt2jD9ZRVh4nRuORb/Un8T0OdU+ybNjj+bUOn/UuhwPCoVA845IKPLG564520OZW4vT0oogXv7sHM1Ijh7/cU7MShNDWdQ9Aa2ds7uLpcrUcLk683bIfRpQxUv0bhV/xTlD+coagIYZU3hTHK3kw+8A1DBd5/+11ixslithUYIZvp4VyzftvWevlHivivvMfeVEdapu+p6M0ZUP/JwX7K4gIbs8Jr62vVfrvEIkLhz8UdO1aZb6gVWgzBAoKSTIc7W2CyU2Ufwhi5qoTR/X4d9XnKkyhlUDHTFgTZlF0IYR22NhyMxMUD2ZIImxzNLjj84ouG+AOnq+na1YHmlOG2z29LR4//8YqDLOPWsgKH5aEk8URhWt1NAPU9C+oNx6On30vqgZXXx/e6Q9NWgkjUbedZdF0u2b2ET0YvghGCdzdHnCmDMEArOf8nz6OKfs3NRXZ72RfpVwoUuiT+5fV73nfb1vPaayA8KDd2YgA/v+3wR40r7cFG+fI6Fea7Vuynl8TEl4ODWSvvkl2Acs4WpZkLaeJiUpNM3p0qhF3YqtxN9smzrQHpRT3xhgkRSrf3my/JWk/Gx6U2NyQhV/nbXfOmReG6POFjs5BS4cDk+/NQJYMJo32pRLlGqsFoR8/aGGEqND6lhKox5UThIO3o8P3N9XU7tnCHsQf1rdUDw+vdINBxPzRGCvBGOeIbeYtrPIYZbO+MhyZzxupwbDIWnYpxfDwHUkQVbHuZWTK2upTIUL7/XXtmKwpI9OIUjpucI3q/QSLU3j9sztavNw4AJVfsHC0+sTYPSPz5+5KEZjxy8JVWaRpKrDNyWYmn/s2UzJI357Ej7/sGZ57PXJfAVId24u+YAxBfSMAKm2Vh+B/plrx/bwINjZVoV3HNz54aPAoCCJi8mOS1/15Byoaiiq5mYHjjJQSdRMp8i8/8O6T1tZCWs9oEKwrP6rru6Tfnq1CLLUrRsXydNBs0fnPdV/lXkf+JLhRVUCnAs9vuuKtrJxwQitxRKNhu2KDMx7OKdOhZ59Hp+RqT+Ir67B6izukj7i9jvOJTn2oxsKCzfK4RpDJuzClfcaPrAh8FqLzZuYfUrbpbSyXObi9scdIkqv1Xdr7dHa1jnwHbNDpbFoggIlo5D8hJjY50CvEwfC18vX65iryDqnEB0Ch1qvNiPQ8u4KSgRT9RYXZjPgHkf7vxaDpNW03U2NGxJoHh/o88HUCCh26qMYY/agy/a/TSJ2N3ev968DfVJcrVJCiqywMPzxGyusGVWeK4e4qKahWUAKnqU1ayjJK1w5D0FdzAcFwglaojvDyPfxEUck/hnO5/13USVK9RfJfCep5YG5jYnE1syc7UsWIJcjDmxAYkvb6Yf/RbKzWFn5tgWOdnaqPcKRP43IBiJFwocFLhiHqaSON0k1j76dwSnTAFTlcpLeY/iDtyeAFKMlj2DlaKSCoWCRdBh9NHTyxxgYDhvyNIyvgnReJnSiR/kauL1VpsAWqFShunGpaJwfee0ETZdlQU5YnoQQHmlgNkfYw3bD/4rqkipro8R4uuLSDdfWPLkUBDbOocFEg2yICKphJrxEB2ul20+69mup8ky43tWv0Q3ibsvlVV8Y9btjZ1rMFbA9joGDOoNbuNAXrGUOEX5GDRHa2P902ikN69W711yGe4Nd/pR/rbGcVNan9X3+lsS+79PXojCNctg2S00761diHq0XSyw8x5Wa59VDQJ/+qvlvBRbpTIpel04Wq84WwHFeeqJp0wtKH51gLBvDWSR5vQJTl7z8YtvECceZwGhB+2KL7Ha79tWjKf/ao84mKw/+ppFXOe9/OVpTpJ/Ejicd6K9loYvK2+YAPa/iICO4n5Kq9rO5SmZn/FXMJvRlxH6gtqNd5vV28WuL4VuazWCuXZN9kTfBe5DT7Sl+ZU6TzqVKeAR/PPNFFyDrTBQ6fp25BvCFXr6n7nsQAZAy19tOEwzmKIInIXj5z+/TKkmIIlu9cdkirw2oJdye+UAKyDAD439Efoos0SjOewMm20TZXvDt+4ZUwuWYZvwZTeB9UqDpiwLepVuL+ionWZibdIntwado5O/IQlhcGLPDp5ogbSyV6M4m2xJ7qCB3VfKvmkzgwRXukVgy3uTqq3K45dvgNDc9GW5j7LOdEi0UAPy2a+FOtA1rREUKKlrRK2JetXxlZjDu9uhr4uAR+m5YKUH4htY5Uw6UnSdTChN+X/5Azb4fztYKNb9NqL8daQ30nuiPNlMaF66pTctLpUudUnhEbf5EJ7yL8L1cBb2XAoPeZQeySgqbWBs/M7vQKzJqFsUthnu5idVNSUBjpH+/AC3j8XGksKSWYMClNNdJWiPhQKosOZvMsKxfuYEWNMeeDgdrvaDrUhbOJLAIwwacm8XxNqmInR2FyNG3iH09dVIUSgp3H5in5fYwxKDSLkTU9y8H8MmN8093vWvmTW1LDQ/8sxFvOw+xXWytLk7yz9AyiW3+19o/bwuvRDeo2VvWL5wCqa551JxkI065Ppi12JDib6SWRh5KjJx+SRO1YYmzHerukJ+I8zgkgmZIgVgrUffpwUkHaMNijLkO0AyfaDhPI7Fn2FlMAQKjV+5rzi8FPU60IflJ5C2qg1GmF88SDefpBb1+rG45uNe1Uf/RhRQ6sB8NtCG3/S6irokp5e9yRt1nopI16c7ZEpwfTQjxDEmzUtwao2Se6DsR1V3yf7le0jIfYge81Od4zmVMuitRFOksUooETJxU12dwkdwpOMwMJ549Rm459p3tp8FZvF/dhh1MRrHTU/Su08rx3OXDBX5TM4G0YeNvv7/OUOMl+8JDg1/yO+1GXfj4b9jysfdW1bRHZWrklu6pSQhJVs51HGdFfDNwEml+0BX+ovFF/8jx+VsmljlEJUXANZS2yoYMVnawSfqJeFnEFTftIPMzkRTl9gGZ/qj3zUslMUxaaEE8vBBbLMCzkDqORj5s/8Rl08w2ra4NQ2XFPQ6kwWV558dhFwlje5YMKRYpg0tJ7H8lunOCzufxU1MOZR4F/vxossAdyy3/m7G2iNqZjMEUI1sGppXdmiT5v6kveCkSEKPcr/eTTsdidZY75pSaNj5Y7v02WmbEjKBOd8f6fvFtvESflhaL9PhARI+4A1k0f5U20Eniymt2ZFllvCfg6Dbpu0F3e1I9+K/wqJFqDAKxqN5tWPU+8pkuxGL25PYkfWnaODGpjSeGVFOk3B9wQOjkYqMBHD0MzQp+DoHNSObbnbsoPZjK8qK3+Z+ktbUte7EZjM2VQjqypw1XxF0F47yADuLdieRMNpPKI/7n/6YhMCEkndG9mxdUALUKFm+/JHusfLSZyggAKPFxdtppAG80EmCNlKkqORLEvK+reYR01WOzoYD5Nsop0940EYfNwFQIVqPiObUdUXJXy8GdWWoqUC61Jok6/F5OpVqBySXwzGffsgjr2hTIwUiII5gPbxCTk2uXJu1iI+69AZCUVyqOc8Buakv61MSOr9mR+1fPHQgxhAteNjJqaa9LkX7YZ6vlSbgEY/HGBV/GeUn+NEi/MbGy/8XI6h7iWZPc31tAmHj2qjdEhRzvm4M7fHVBA6+YMlTpnvQikaWEZtSlj7a/+I3WTY39HlreuoImUw34b7AWMVPSekOQdDnC8RYw01LipCMa+TSebnTYrvzHqcjzsz2sI1yTpDLzuZAcLRPANBkafLdgeRjx9Kydy71el49gyrVm82tI2CfymkiS+gkyo6a2oo+xsSDfI9hHK8RIA75i5YxG7cuJa2v0dnudUZt2rgLB6FVRQuUUVZh7rFDVpgZKN9ykBGxJVU0F50YscZg4VdMMwlbP6lp3d1omea7lCekZ8NBConkwUVdHldy6e3XU+Qu+6biabd09zQ3Jc4o69fp16+4T2MGMJYkNWTaCIwRhjgQydjlNlAyagLkE5e3soBmnScrmNiy/hxeLoUI0183yW1Sxy71ixbBKgAUFpbV4P6njGYn1T/+SlTnjq0AUORRRUx60KDI1WzpL+jN3J0WxT3EKNecxYJm7qz///5DUhRYSOco2Y+qEGo+r/U7k6eYtIrpNqOTnB7N7Oh3s9JxpzdOITahiCZR1wJDIUt7CXQ1eBG5+wsWnIXxHQ9/6XFZDrrdx06wHdYIPc80gEsDw+8gc8iGktiWmx/5Ue0DiZxsg9/WyZkL1Wkml9f3t+qKSoNIJELbBcfIkSW78eqd/beeDKZ+JlL8E3ZE1+CA77gJ+3L1B1Ksid5JZ+CRCRBq0lYzt8uF/F+NbreiKftc5C0QffQ8IoGTBUZK41WVXd2B8E0tYCLUmy2S4y84WMgWXO3Uiv+i59xBbCZ9AckNlLRyA/PjgDpCIFpFn7ew+eCuP1XRIVTTPOaZMAYPISD6z+43Q4v4qoEPetihS1fu5l4p18pJ4t+h5HkHP6/+95/yW5i0U4TjYJe/LSes2PeEDbHh0NXXHKIORHFm3RyG28H7lGFUclZsyNvhaE896pWOLfBcPT6qmgQX7SiGjX2kiOTjT2Abv/yk+7MwFSMOxjaIx3FiN1H3f6AQM08UUdYxHVXWo1T/oLwc05gy9r53pCa6mwJobYNcnf3BKDq7Y4J8Ya1PtPVZudzIV7a19Jx6FqSIp6quwDbAlJ374EL0m3WjLgfWUr/liaU0HsABrafSrBnkF+tY2H12/zy8a6waRByOoh1HxKUYxrod2qk9re+EsdPG6XyVo1QyyoAD9QUxptojixqvSZqWP9vMTgoXWoEZp/kk89kOQa4O1ZTPTKLVmQBYldqkCbuCil5lT5PKDbrQ34TR0QS4jKDaq4udA1wEjCCgW9wLmiyFaaqXfCKbx6KvRjSsXd3Q9l10bP86KhCD02jEFhnDwECJntvvnKWDAvY/O/C3+IDywcFocSaVITHbWme6IhB5vL83QQMNdHpyxsdnY6MQeAzTzX3Es5qKvagVRReY2V9w3IB6XeWPOr5cEPJFglbwyPpyrjr5dH0BHI4YXQkr6w/JXhF42s59IAzQV8+P/U194z/Ut+q0+raLZBqPLfInO96dPHHzVBZNJHEDDwsJMhkrzYUzRObVB9eX9MHOQSB/DLurM0PdLpFBvnhHwjhT89Fl168ArlD2tg9rsQEfOxSukO6fMruJb9C3gVN0qd+9cq86IXCEY3mAQBxw7mtpoCrjRj8SQZVVPoOFLwpBMjKeIJBhaDIGzWCNaHHIc6MeytF8rP6qHeUoGpXSpdANn88+r7D695RXA67/e1ZOwQsSU7D7XZsTmpRGccjHv8vm5xjo5iJIM8J+pJmRxexQF/7DAvqlDso8bQKDQTymLNVK1xfU+yEnJfnqwjU+LVX1/aO5SIv4wK2W7JigDs2QSJwCfcqlpQIVzeVJr9yFvh2Vb75Fw6CfsRWA62i/TUyllXEXECaTO9uiaDMXv190NzdNKKQFjdLSPawHvD7UAyszJsWjaa2benQMmxUUvIgmiRF16CrHcH8comm5xJY21uPBq3hZlP0C1iAps5BkOGCLHmU9Gg8+MC+++UQgQl5a/ujWeT2M67k3PveNHYDUke3rkCDcXxsqdpBObt/O65Ezbrlbe3WR78iWQqVxPf4+jsWsdN6SBR+hnZ3Bj8HMNTD78ejF8DYpnxdXYcYHDIo1DmTc8LILSVXicP+32usSiR5Ct/YNi5hS1oOJxxnyH0w74tluJwwO0l3Ga0YWJLTAu+0cYhzu9dAOljrQIq0NWI2QhBXBpS0M41eTAdDSWtyyaxI4veCWuZGYl6nuCOnmTZsExkPV1Y01aaPhKJxiBAXs1kLYOfPkOzQcBODH+uvbtkLmBV+flnDQEfnpwTdynq4I8Nhs3+qYPhnjIv/kABpBL38eaDn4P53bra8UPZDixbioejxrFT+ap2hyBypNA92reHimDBJQ3Amq5KK/3wtUofj2AvQeWXew38ou4b2NL3HnGA5PQ5th0dOSkuoR0AjHc4z8SLDO8PQULGvlTfGVzUwUcXVOl6MwgwHyAQ0LmFMSjt/OT/BFyd5tQeCst5kIZuQ+qqVaw1e7mIPkZYhlon4QMaT11ixn5Be5RQegSJlI+UhZ4SigUpAA9vS88w7YmmAFaGM0c81gCNIHVKDW0BWCEPjXILXYhTnCoxTL3zjfj+zcTuJSN4jy73alHrGBZmYjzUKNDzZ4viOzGGd4+are3PaZ5hLR8I4OnoU6DYFbj7J/ez3YblunrZcHq2CHMxpv2Zh0EG0E4O5ubO3w04rrVWEPZA8ix+Bv6xne4NAceek89iTXLo08sma6bcuQcJhTf+Phj03vhreHzMttJqbmYrplGmEOkKRLF2n9sGETevygopqz1AnvBOa2Fw9gpAAWGnIzT69f8w53qu7LOE2oc/azQ+6gs9az1CLd677EXeWs+w6/1QNGQRCQEEEmmIsBLmCGV1FZb0eji4ZGo+zSkdnggyt8iHq8cLUjidMcepEsCzUcTWj0xYUlJ7grPgzGguiRsJR1kJdxvxh8tNpdS/zQ0+cOEJG33G9bhyXmRVD+vh9f2vz85dEJzbFsdBXf14KhZCRlow5+xM9Jlv5HDB+3LcNiX6+cZVqnAkQ2y2LTm6TiG3PPDUET7Zo2dVe4AV1cyDF6hj+YLCiEED4YUNZ4claunmACogaT+5UdmlXxqGrfIjdGrbb6YqasAqtSsNqkOdb8bOWUz8r6jBTSZNaHvZP7vgvoR3VFn8lRT03xGe8UfRKKgsOHnpIWFHepDmhtwffb8EvAT616Z16AENBqdXKeJWUidAoy+rgkUviEBm3QYyuetOzfBp3CC0FqqUYMELY7UxTknzCGFjtFepoThos0j6A3lSLFveYwEI91RFy8bavxSiRBlYMtIzFsFKeOGpYx0cTizmz2InNaxsvk4WptPG15AtmWmi+AVSawaW4DJ9RzUN1Is0M9vel6CgyYQBz8zEnVf+aRsDtABJMEjSNXUqB+sdRm6p7p9GpW0t37Dt9rdzlib2M/kzzwc0PYZ+8r3XnHdbadyPSh+1XBhf8wifnrI6a2tPyyOFP7qVHcva0v8flrB7UEMvh+LF7dMsna1Sm5oEGJFyR3rhZhHWJ3gcx/nQ5eTiiAvyOFrVhhRoDsr05StBu+9wjjnlB0l4AZjE+h4qM+4LsVJg0VMPBfVGdu4W1efpa1jsAtaRGLZhGOeQPCDABAtiXnWMDDcfzNWNjsXuMh+ydmhEAAAAAA==" alt="Airbnb profile picture of Jenny" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
                                 <div class="oldrectory-review-author-copy">
                                     <strong>Jenny</strong>
                                     <span>August 2026</span>
@@ -465,15 +621,17 @@ There were tears when it came time to leave; we would all be delighted to return
                         <article class="oldrectory-review-card" aria-label="Review by Georgia">
                             <div class="oldrectory-review-main">
                                 <div class="oldrectory-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                                <div class="oldrectory-review-text" id="oldrectory-review-text-georgia">
+                                <div class="oldrectory-review-excerpt">
+<div class="oldrectory-review-text" id="oldrectory-review-text-georgia">
                                     <p>This hit the spot:  it felt like a home just more luxurious than ours. Every year we take three generations of the family away for a weeks holiday and at the end we ask would we come back. We all said yes.  We used all the rooms, enough space for 14 people to relax when and where they wanted.  We played croquet, table tennis, snooker and swam in the best pool we&#x27;ve ever enjoyed. The jacuzzi was used endlessly, the lawn was a perfect spot for watching the Pleiades meteor shower.  The carved table and stools by the table tennis made for evocative evening meals.  The William Morris textiles and fabrics created a lovely ambiance, they fit the house and I had fun counting the number of different patterns.
 It took some getting used to the two kitchens, but we resolved into using one for breakfast (the Aga is great for frozen croissant) and the other for evening meals -  I am more in control with a gas cooker than an Aga.  loads of Fridge and freezer space.
 Beds, sheets, towels etc all fab</p>
                                 </div>
-                                <button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-georgia">Read More</button>
+<button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-georgia">Read More</button>
+</div>
                             </div>
                             <div class="oldrectory-review-author">
-                                <img src="assets/images/reviews/Georgia.webp" alt="Airbnb profile picture of Georgia" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
+                                <img src="data:image/webp;base64,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" alt="Airbnb profile picture of Georgia" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
                                 <div class="oldrectory-review-author-copy">
                                     <strong>Georgia</strong>
                                     <span>August 2026</span>
@@ -483,7 +641,8 @@ Beds, sheets, towels etc all fab</p>
                         <article class="oldrectory-review-card" aria-label="Review by Danielle">
                             <div class="oldrectory-review-main">
                                 <div class="oldrectory-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                                <div class="oldrectory-review-text" id="oldrectory-review-text-danielle">
+                                <div class="oldrectory-review-excerpt">
+<div class="oldrectory-review-text" id="oldrectory-review-text-danielle">
                                     <p>I booked this beautiful home for my sister’s Bridgerton theme Hen weekend and it did not disappoint!
 Everything about this house was perfect!
 Louise was so helpful when i had questions throughout my stay.
@@ -491,10 +650,11 @@ The house its self was beautiful and well kept, with plenty of amenities.
 The bedding was luxurious and super comfy.
 I would definitely book again.</p>
                                 </div>
-                                <button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-danielle">Read More</button>
+<button class="oldrectory-review-more" type="button" aria-expanded="false" aria-controls="oldrectory-review-text-danielle">Read More</button>
+</div>
                             </div>
                             <div class="oldrectory-review-author">
-                                <img src="assets/images/reviews/Danielle.webp" alt="Airbnb profile picture of Danielle" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
+                                <img src="data:image/webp;base64,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" alt="Airbnb profile picture of Danielle" class="oldrectory-review-avatar" loading="lazy" width="48" height="48">
                                 <div class="oldrectory-review-author-copy">
                                     <strong>Danielle</strong>
                                     <span>November 2026</span>
@@ -599,74 +759,100 @@ I would definitely book again.</p>
         </div>
     </footer>
 
-    <!-- Guest Experiences carousel + expandable full reviews; intentionally scoped to this section. -->
+    <!-- Guest Experiences only: carousel and expandable full reviews -->
     <script>
     (() => {
         const carousel = document.querySelector('.oldrectory-reviews-carousel');
         if (!carousel) return;
+        const track = carousel.querySelector('.oldrectory-reviews-grid');
         const viewport = carousel.querySelector('.oldrectory-reviews-viewport');
-        const cards = Array.from(carousel.querySelectorAll('.oldrectory-review-card'));
+        const cards = Array.from(track.querySelectorAll('.oldrectory-review-card'));
         const previous = carousel.querySelector('.oldrectory-review-prev');
         const next = carousel.querySelector('.oldrectory-review-next');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        let currentIndex = 0;
+        let index = 0;
 
         const visibleCount = () => window.matchMedia('(max-width: 900px)').matches ? 1 : 3;
-        const lastIndex = () => Math.max(0, cards.length - visibleCount());
-        const step = () => cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : viewport.clientWidth;
-
-        function updateArrows() {
-            previous.disabled = currentIndex <= 0;
-            next.disabled = currentIndex >= lastIndex();
+        const maxIndex = () => Math.max(0, cards.length - visibleCount());
+        function stepSize() {
+            return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : viewport.clientWidth;
         }
-
-        function showReview(requestedIndex, animate = true) {
-            currentIndex = Math.max(0, Math.min(lastIndex(), requestedIndex));
-            viewport.scrollTo({
-                left: currentIndex * step(),
-                behavior: animate && !reducedMotion.matches ? 'smooth' : 'instant'
-            });
-            updateArrows();
+        function refreshArrows() {
+            previous.disabled = index <= 0;
+            next.disabled = index >= maxIndex();
         }
-
-        previous.addEventListener('click', () => showReview(currentIndex - 1));
-        next.addEventListener('click', () => showReview(currentIndex + 1));
-        viewport.addEventListener('keydown', event => {
-            if (event.target.closest('.oldrectory-review-more')) return;
-            if (event.key === 'ArrowRight') { event.preventDefault(); showReview(currentIndex + 1); }
-            if (event.key === 'ArrowLeft') { event.preventDefault(); showReview(currentIndex - 1); }
+        function collapse(card) {
+            const excerpt = card.querySelector('.oldrectory-review-excerpt');
+            if (!excerpt.classList.contains('is-expanded')) return;
+            const toggle = excerpt.querySelector('.oldrectory-review-more');
+            const quote = excerpt.querySelector('.oldrectory-review-text');
+            excerpt.classList.remove('is-expanded');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = 'Read More';
+            card.classList.remove('is-expanded');
+            card.style.height = '';
+            quote.style.maxHeight = '';
+        }
+        function goTo(requested, animated = true) {
+            const nextIndex = Math.max(0, Math.min(maxIndex(), requested));
+            if (nextIndex !== index) cards.forEach(collapse);
+            index = nextIndex;
+            track.style.transitionDuration = (!animated || reducedMotion.matches) ? '0ms' : '';
+            track.style.transform = `translate3d(${-index * stepSize()}px, 0, 0)`;
+            refreshArrows();
+        }
+        previous.addEventListener('click', () => goTo(index - 1));
+        next.addEventListener('click', () => goTo(index + 1));
+        viewport.addEventListener('keydown', e => {
+            if (e.target.closest('.oldrectory-review-more')) return;
+            if (e.key === 'ArrowRight') {e.preventDefault(); goTo(index + 1);}
+            if (e.key === 'ArrowLeft') {e.preventDefault(); goTo(index - 1);}
         });
-        let scrollPending = false;
-        viewport.addEventListener('scroll', () => {
-            if (scrollPending) return;
-            scrollPending = true;
-            requestAnimationFrame(() => {
-                scrollPending = false;
-                const distance = step();
-                if (distance > 0) currentIndex = Math.max(0, Math.min(lastIndex(), Math.round(viewport.scrollLeft / distance)));
-                updateArrows();
-            });
-        }, { passive: true });
+        let touchStartX = null;
+        viewport.addEventListener('touchstart', e => {
+            touchStartX = e.touches.length === 1 ? e.touches[0].clientX : null;
+        }, {passive: true});
+        viewport.addEventListener('touchend', e => {
+            if (touchStartX === null || !e.changedTouches.length) return;
+            const delta = e.changedTouches[0].clientX - touchStartX;
+            touchStartX = null;
+            if (Math.abs(delta) > 45) goTo(index + (delta < 0 ? 1 : -1));
+        }, {passive: true});
 
+        function expand(card) {
+            const excerpt = card.querySelector('.oldrectory-review-excerpt');
+            const quote = excerpt.querySelector('.oldrectory-review-text');
+            const toggle = excerpt.querySelector('.oldrectory-review-more');
+            const wasExpanded = excerpt.classList.contains('is-expanded');
+            if (wasExpanded) { collapse(card); return; }
+            // Expanded height is calculated from the full, original text; no words are deleted.
+            const collapsedHeight = quote.getBoundingClientRect().height;
+            const fullHeight = quote.scrollHeight;
+            excerpt.classList.add('is-expanded');
+            card.classList.add('is-expanded');
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.textContent = 'Read Less';
+            quote.style.maxHeight = `${fullHeight + 3}px`;
+            // Reserve space for the Read Less link when it enters normal flow.
+            const targetHeight = 354 + Math.max(0, fullHeight - collapsedHeight) + 37;
+            card.style.height = `${Math.ceil(targetHeight)}px`;
+        }
         cards.forEach(card => {
-            const button = card.querySelector('.oldrectory-review-more');
-            const text = card.querySelector('.oldrectory-review-text');
-            button.addEventListener('click', () => {
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                button.setAttribute('aria-expanded', String(!isExpanded));
-                button.textContent = isExpanded ? 'Read More' : 'Read Less';
-                text.classList.toggle('is-expanded', !isExpanded);
-                text.style.maxHeight = isExpanded ? '' : `${text.scrollHeight}px`;
-            });
+            const toggle = card.querySelector('.oldrectory-review-more');
+            toggle.addEventListener('click', () => expand(card));
         });
         window.addEventListener('resize', () => {
             cards.forEach(card => {
-                const text = card.querySelector('.oldrectory-review-text');
-                if (text.classList.contains('is-expanded')) text.style.maxHeight = `${text.scrollHeight}px`;
+                const excerpt = card.querySelector('.oldrectory-review-excerpt');
+                if (!excerpt.classList.contains('is-expanded')) return;
+                const quote = excerpt.querySelector('.oldrectory-review-text');
+                quote.style.maxHeight = `${quote.scrollHeight + 3}px`;
+                const preview = parseFloat(getComputedStyle(quote).fontSize) * 6.8;
+                card.style.height = `${Math.ceil(354 + Math.max(0, quote.scrollHeight - preview) + 37)}px`;
             });
-            showReview(currentIndex, false);
+            goTo(index, false);
         });
-        updateArrows();
+        goTo(0, false);
     })();
     </script>
     <script src="script.js"></script>
