@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Stays - Holt Accommodation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="corporate-stays-page">
+
+    <header id="header" class="header staywithus-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logov1.webp" alt="Holt Accommodation Logo">
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                    <li><a href="meettheteam.html" class="nav-link">Meet The Team</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="staywithus.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">Stay With Us</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="corporatestays.html" class="nav-dropdown-link">Corporate Stays</a></li>
+                            <li><a href="home4home.html" class="nav-dropdown-link">Home From Home</a></li>
+                            <li><a href="luxury-retreat.html" class="nav-dropdown-link">The Old Rectory</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <a href="contactus.html" class="btn btn-olive mobile-enquire btn-pan-hover"><span>Get In Touch</span></a>
+            </nav>
+            
+            <div class="header-right">
+                <a href="contactus.html" class="btn btn-olive desktop-enquire btn-pan-hover"><span>Get In Touch</span></a>
+                <button class="hamburger staywithus-hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================ HERO ============================ -->
+        <section class="corp-hero js-reveal">
+            <div class="container">
+                <div class="corp-hero-grid">
+
+                    <!-- Left: editorial copy -->
+                    <div class="corp-hero-copy fade-in stagger-1">
+                        <h1 class="corp-hero-title">Business<br>Accommodation<br>Made Simple</h1>
+                        <span class="corp-rule" aria-hidden="true"></span>
+                        <p class="corp-hero-lede">Smarter, reliable stays for working teams &mdash; helping your projects run smoothly from day one.</p>
+                        <div class="corp-hero-body">
+                            <p>At Holt Accommodation, we know successful projects start with a great night&rsquo;s sleep.</p>
+                            <p>We specialise in sourcing and managing premium accommodation, designed around the needs of working teams. From first contact to checkout, we handle every detail so your workforce can focus on what they do best.</p>
+                            <p>Wherever your project is in the world, our expert service makes booking simple, communication seamless, and costs transparent. With competitive pricing, trusted partnerships and 24/7 support, we help you save time, money, and stress.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: single hero image -->
+                    <div class="corp-hero-visual fade-in stagger-2">
+                        <figure class="corp-hero-image">
+                            <!-- Replace this src with your chosen picture when you have it -->
+                            <img src="assets/images/phoneman.webp" alt="A professionally managed corporate accommodation interior" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">Professionally managed stays</span>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= OUR GUARANTEE ========================= -->
+        <section class="corp-guarantee section-padding js-reveal">
+            <div class="container">
+                <div class="corp-guarantee-grid">
+
+                    <!-- Left: image collage -->
+                    <div class="corp-collage fade-in stagger-1">
+                        <div class="corp-collage-main corp-photo">
+                            <img src="assets/images/newbuskitchen.webp" alt="Modern, fully equipped kitchen and dining space" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">Kitchen &amp; dining</span>
+                        </div>
+                        <div class="corp-collage-row">
+                            <div class="corp-collage-cell corp-photo">
+                                <img src="assets/images/bedroompic.webp" alt="Comfortable private bedroom" loading="lazy" onerror="this.style.display='none'">
+                                <span class="corp-photo-fallback">Bedroom</span>
+                            </div>
+                            <div class="corp-collage-cell corp-photo">
+                                <img src="assets/images/bathroomimage.webp" alt="Clean modern bathroom" loading="lazy" onerror="this.style.display='none'">
+                                <span class="corp-photo-fallback">Bathroom</span>
+                            </div>
+                            <div class="corp-collage-cell corp-photo">
+                                <img src="assets/images/laundryroom.webp" alt="On-site laundry facilities" loading="lazy" onerror="this.style.display='none'">
+                                <span class="corp-photo-fallback">Laundry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: copy + checklist -->
+                    <div class="corp-guarantee-copy fade-in stagger-2">
+                        <h2 class="corp-section-title">Our Guarantee:</h2>
+                        <span class="corp-rule" aria-hidden="true"></span>
+                        <p class="corp-guarantee-intro">At Holt Accommodation Solutions, we make sure every property meets a consistent minimum standard &mdash; so your teams can settle in properly and focus on the job from day one.</p>
+                        <p class="corp-guarantee-lead">We guarantee every stay includes:</p>
+                        <ul class="corp-check-list">
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Clean, well-maintained homes suitable for comfortable daily living</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>One bedroom per person for privacy and rest</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>At least one bathroom for every two guests</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>A fully equipped kitchen for everyday cooking</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>On-site laundry facilities</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Reliable WiFi and a TV for downtime and communication</li>
+                            <li><span class="corp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Parking for at least one vehicle where required</li>
+                        </ul>
+                        <p class="corp-guarantee-close">Across all our properties in the UK, EU, and beyond, we deliver consistent, dependable accommodation for working teams, contractors, and crews &mdash; wherever the job takes you.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= WHY CHOOSE US ========================= -->
+        <section class="corp-why section-padding js-reveal">
+            <div class="container">
+                <div class="corp-why-head text-center fade-in">
+                    <h2 class="corp-section-title">Why Choose Us?</h2>
+                    <span class="corp-rule corp-rule--center" aria-hidden="true"></span>
+                    <p class="corp-why-sub">We keep your teams comfortable and your job simple.</p>
+                </div>
+
+                <div class="corp-why-grid fade-in stagger-1">
+
+                    <!-- Card 1 -->
+                    <article class="corp-why-card">
+                        <div class="corp-why-photo corp-photo">
+                            <img src="assets/images/pexelscover1.webp" alt="Team planning a project together with a tablet" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">Planning together</span>
+                        </div>
+                        <span class="corp-why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="16" y1="2" x2="16" y2="6"></line></svg>
+                        </span>
+                        <div class="corp-why-body">
+                            <h3 class="corp-why-title">Convenience &amp; Flexibility</h3>
+                            <ul class="corp-why-list">
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Tell Us What You Need &mdash; We&rsquo;ll Do the Rest</strong> &ndash; Share your requirements and we&rsquo;ll source, confirm and arrange seamless check-in and check-out.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>One Point of Contact</strong> &ndash; A dedicated account manager who knows your company and your needs.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Flexible Stays</strong> &ndash; Last minute bookings, easy changes and extensions as projects evolve.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="corp-why-card">
+                        <div class="corp-why-photo corp-photo">
+                            <img src="assets/images/pexelscover2.webp" alt="Calculator and documents for transparent pricing" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">Transparent pricing</span>
+                        </div>
+                        <span class="corp-why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5 9.2 9.5 12 9.5s5 1.1 5 3-2.2 3-5 3-5-1.1-5-3"></path><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+                        </span>
+                        <div class="corp-why-body">
+                            <h3 class="corp-why-title">Cost &amp; Value</h3>
+                            <ul class="corp-why-list">
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Best Rates, Guaranteed</strong> &ndash; Exclusive partnerships mean we deliver exceptional value, with a keen eye on the budget.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>All-Inclusive Pricing</strong> &ndash; No hidden extras, the price per night is all inclusive.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Hassle-Free Invoicing</strong> &ndash; We work within client flexible payment terms.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="corp-why-card">
+                        <div class="corp-why-photo corp-photo">
+                            <img src="assets/images/pexelsmaps.webp" alt="Van on an open road heading to a remote site" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">UK, Europe &amp; beyond</span>
+                        </div>
+                        <span class="corp-why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"></path></svg>
+                        </span>
+                        <div class="corp-why-body">
+                            <h3 class="corp-why-title">Tailored Solutions &amp; Coverage</h3>
+                            <ul class="corp-why-list">
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>UK, Europe and Beyond</strong> &ndash; From cities to remote sites, there is nowhere we don&rsquo;t cover.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Personalised Experience</strong> &ndash; We get to know the specific requirements of your workforce to make sure that even the most exacting guest is happy. Through years of experience, we know what they need before they do.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>24/7 Support</strong> &ndash; Wherever your team is based, we&rsquo;re contactable around the clock to keep everything running smoothly.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="corp-why-card">
+                        <div class="corp-why-photo corp-photo">
+                            <img src="assets/images/pexels-yankrukov-8867254 (1).jpg" alt="Friendly customer support agent wearing a headset" loading="lazy" onerror="this.style.display='none'">
+                            <span class="corp-photo-fallback">24/7 support</span>
+                        </div>
+                        <span class="corp-why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-2v-7h4"></path><path d="M4 13v5a2 2 0 0 0 2 2h2v-7H4"></path></svg>
+                        </span>
+                        <div class="corp-why-body">
+                            <h3 class="corp-why-title">Reliability &amp; Support</h3>
+                            <ul class="corp-why-list">
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Round-the-Clock Help</strong> &ndash; 24/7 support for your team.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Fast Issue Resolution</strong> &ndash; Glitches fixed quickly to minimise downtime.</span></li>
+                                <li><span class="corp-tick" aria-hidden="true"></span><span><strong>Proactive Communication</strong> &ndash; Regular updates so you&rsquo;re always in the loop.</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Decorative house divider -->
+                <div class="corp-house-divider fade-in" aria-hidden="true">
+                    <span class="corp-house-line"></span>
+                    <span class="corp-house-mark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>
+                    </span>
+                    <span class="corp-house-line"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="corporate-contact-form" class="corporate-contact section-padding js-reveal">
+            <div class="container">
+                <div class="corporate-contact-inner">
+                    <div class="corporate-contact-copy fade-in stagger-1">
+                        <h2>Tell us what your team needs</h2>
+                        <p>Share a few details about your project and we’ll prepare suitable accommodation options. Enquiries are free and there is no obligation.</p>
+                    </div>
+
+                    <div class="corporate-form-card corporate-form-card--compact corporate-form-card--heartbeat fade-in stagger-2">
+                        <form id="corporate-contact-form-element" data-recipient="admin@holtaccommodation.co.uk" data-subject="Corporate accommodation enquiry" action="mailto:admin@holtaccommodation.co.uk" method="post" enctype="text/plain">
+                            <div class="corporate-form-grid corporate-form-grid--compact">
+                                <div class="corporate-field">
+                                    <label for="contact-name">Full name *</label>
+                                    <input type="text" id="contact-name" name="contact-name" autocomplete="name" required>
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-phone">Phone number *</label>
+                                    <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" required>
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-email">Email address *</label>
+                                    <input type="email" id="contact-email" name="contact-email" autocomplete="email" required>
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-company">Company name</label>
+                                    <input type="text" id="contact-company" name="contact-company" autocomplete="organization">
+                                </div>
+
+                                <div class="corporate-field corporate-field-wide">
+                                    <label for="contact-location">Location of accommodation *</label>
+                                    <input type="text" id="contact-location" name="contact-location" placeholder="Town, city or project location" required>
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-arrival">Arrival date</label>
+                                    <input type="date" id="contact-arrival" name="contact-arrival">
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-departure">Departure date</label>
+                                    <input type="date" id="contact-departure" name="contact-departure">
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-guests">Team members *</label>
+                                    <input type="number" id="contact-guests" name="contact-guests" min="1" placeholder="e.g. 6" required>
+                                </div>
+
+                                <div class="corporate-field">
+                                    <label for="contact-bedrooms">Bedrooms needed</label>
+                                    <input type="number" id="contact-bedrooms" name="contact-bedrooms" min="1" placeholder="e.g. 6">
+                                </div>
+
+                                <div class="corporate-field corporate-field-message">
+                                    <label for="contact-extra">Anything else your team needs?</label>
+                                    <textarea id="contact-extra" name="contact-extra" rows="3" placeholder="Parking, laundry, Wi-Fi, separate bedrooms, proximity to site, flexible dates, or a longer stay."></textarea>
+                                </div>
+
+                                <div class="corporate-form-action">
+                                    <button type="submit" class="btn btn-olive btn-full corporate-submit corporate-btn-shake">
+                                        <span>PREPARE ENQUIRY EMAIL</span>
+                                    </button>
+                                    <small>The email will open ready-made. Review it, then press send.</small>
+                                </div>
+                            </div>
+
+                            <div id="contact-success-msg" class="corporate-form-success" aria-live="polite" style="display: none;">
+                                <h4>Thank you.</h4>
+                                <p>Your email is ready. Please review it in your email app and press send.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer bg-olive text-white js-reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.png" alt="Holt Accommodation Logo" class="footer-logo">
+                    <p class="footer-desc">Curated stays for teams and travellers. Workstays, relocations and luxury retreats, managed with care.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/holtaccommodationsolutionsltd/" target="_blank" rel="noopener noreferrer" aria-label="Holt Accommodation on Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a>
+                        <a href="https://www.instagram.com/holtaccommodationsolutionsltd/" target="_blank" rel="noopener noreferrer" aria-label="Holt Accommodation on Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="meettheteam.html">Meet The Team</a></li>
+                        <li><a href="staywithus.html">Stay With Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>+44 7944 406 722</li>
+                        <li>admin@holtaccommodation.co.uk</li>
+                        <li>Mon to Fri, 9am to 5pm</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col" id="enquire">
+                    <h4 class="footer-heading">Enquire Now</h4>
+                    <p class="footer-text">Let us create the perfect stay for your team or your getaway.</p>
+                    <a href="contactus.html" class="btn btn-terracotta btn-full footer-enquire-btn btn-pan-hover"><span>Send An Enquiry</span></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Holt Accommodation. All rights reserved.</p>
+                <p class="footer-legal">
+                    <!-- TODO: link to real Privacy / Terms / Cookies pages once created -->
+                    <a href="#">Privacy Policy</a> |
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions</a> |
+                    <a href="#">Cookies</a>
+                </p>
+                <p>Designed by Atomic Build Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
